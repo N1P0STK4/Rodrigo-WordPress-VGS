@@ -1,0 +1,3 @@
+# Ignore dependencies from npm and Composer:
+/node_modules
+/vendor
