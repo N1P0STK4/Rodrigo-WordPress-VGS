@@ -1,308 +1,345 @@
-\_tw
-====
+# Rodrigo WordPress VGS
 
-This repository tracks the output of the [_tw WordPress starter theme generator](https://underscoretw.com/) with all options left blank.
+Tema personalizado de WordPress desarrollado para la prueba técnica de **VGS** a partir del starter theme **_tw**, utilizando **Tailwind CSS**, **JavaScript**, **SwiperJS** y **Advanced Custom Fields**.
 
-If you're starting a new project, [the web-based generator](https://underscoretw.com/) or [WP-CLI package](https://underscoretw.com/docs/wp-cli/) are the best ways to do that. You can also read [the documentation](https://underscoretw.com/docs/) for more details.
+## Vídeo de demostracion
 
----
+- **Vídeo demostrativo:** [enlace del video](https://youtu.be/zOBFlqhhI1g) (#)
 
-> **Note**\
-> The default contents of `README.md` in a generated theme are as follows:
+## Funcionalidades principales
 
-A custom theme based on \_tw
+- Maquetación responsive basada en el diseño proporcionado.
+- Página de inicio personalizada.
+- Slider principal editable mediante ACF.
+- Slider de reseñas con SwiperJS.
+- Custom Post Type `Productos`.
+- Tarjeta de producto reutilizable mediante `get_template_part()`.
+- Consulta personalizada de los últimos seis productos.
+- Plugin propio para registrar el contenido personalizado.
+- Compilación de CSS y JavaScript mediante Node.js.
+- Contenido de demostración para replicar el proyecto.
 
-## Quickstart
+## Requisitos
 
-### Installation
+- WordPress.
+- PHP 8.0 o superior.
+- MySQL o MariaDB.
+- Node.js y npm.
+- Advanced Custom Fields o ACF Pro.
+- Un entorno local como WAMP, XAMPP, LocalWP o Docker.
 
-1. Move this folder to `wp-content/themes` in your local development environment
-2. Run `npm install && npm run dev` in this folder
-3. Activate this theme in your local WordPress installation
+# Instalación
 
-Using WordPress Multisite? Don’t forget that your theme must first be enabled via the Network Admin in order to be available for activation on a network site.
+## 1. Clonar el repositorio
 
-### Development
+Clona el repositorio dentro de la carpeta de temas de WordPress:
 
-4. Run `npm run watch`
-5. Add [Tailwind utility classes](https://tailwindcss.com/docs/utility-first) with abandon
+```bash
+cd wp-content/themes
+git clone https://github.com/N1P0STK4/Rodrigo-WordPress-VGS.git
+```
 
-### Deployment
+También puedes descargar el repositorio como ZIP y extraerlo manualmente dentro de `wp-content/themes/`.
 
-6. Run `npm run bundle`
-7. Upload the resulting zip file to your site using the “Upload Theme” button on the “Add Themes” administration page
+## 2. Instalar y activar los plugins
 
-Or [deploy with the tool of your choice](https://underscoretw.com/docs/deployment/#h-other-deployment-options)!
+Antes de activar el tema, instala el plugin propio y ACF.
 
-## Full Documentation
+### 2.1. Instalar el plugin propio
 
-### Fundamentals
+Los plugins personalizados se encuentran en:
 
-* [Installation](https://underscoretw.com/docs/installation/)  
-  Generate your custom theme, install it in WordPress and run your first Tailwind builds
-* [Development](https://underscoretw.com/docs/development/)  
-  Watch for changes, build for production and learn more about how _tw, WordPress and Tailwind work together
-* [Deployment](https://underscoretw.com/docs/deployment/)  
-  Share your new WordPress theme with the world
-* [Troubleshooting](https://underscoretw.com/docs/troubleshooting/)  
-  Find solutions to potential issues and answers to frequently asked questions
+```text
+/plugins-propios
+```
 
-### In Depth
+Copia cada carpeta de plugin a la carpeta general de plugins de WordPress:
 
-* [Using Tailwind Typography](https://underscoretw.com/docs/tailwind-typography/)  
-  Customize front-end and back-end typographic styles
-* [JavaScript Bundling with esbuild](https://underscoretw.com/docs/esbuild/)  
-  Install and bundle JavaScript libraries (very quickly)
-* [Adding custom fonts](https://underscoretw.com/docs/custom-fonts/)  
-  Host your fonts yourself or use a third party—and then add those fonts to your WordPress theme
-* [Linting and Code Formatting](https://underscoretw.com/docs/linting-code-formatting/)  
-  Catch bugs and stop thinking about formatting
-* [Generating your theme with WP-CLI](https://underscoretw.com/docs/wp-cli/)  
-  For humans who prefer the command line, and for LLMs that prefer the command line even more
-* [Keeping your theme up-to-date](https://underscoretw.com/docs/updating/)  
-  How to update (and whether or not you should)
+```text
+Origen:
+wp-content/themes/theme/plugins-propios/rodri-plugin-vgs/
 
-### Extras
+Destino:
+wp-content/plugins/nombre-del-plugin/
+```
 
-* [On Tailwind and WordPress](https://underscoretw.com/docs/wordpress-tailwind/)  
-  Understand how WordPress and Tailwind work together
-* [Styling HTML from outside the theme](https://underscoretw.com/docs/styling-html-from-outside-the-theme/)  
-  Work with WordPress core, plugins and JavaScript libraries
-* [Managing Styles for Custom Blocks](https://underscoretw.com/docs/custom-blocks/)  
-  Learn strategies for using Tailwind in theme-specific custom blocks
-* [Setting Up Browsersync](https://underscoretw.com/docs/browsersync/)  
-  Add live reloads and synchronized cross-device testing to your workflow
+Después, accede en WordPress a:
 
-> **Note**\
-> The default contents of `README.md` end here.
+```text
+Plugins > Plugins instalados
+```
 
----
+Activa el plugin propio. Este plugin registra el Custom Post Type `Productos` utilizado por el tema.
 
-## Changelog
+### 2.2. Instalar ACF PRO
 
-All notable changes to this project will be documented here.
+Instala y activa **Advanced Custom Fields PRO**
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+## 3. Activar el tema
 
-### 2026-04-04
-#### Added
-- [Theme generation via WP-CLI](https://underscoretw.com/docs/wp-cli/)
+Cuando el plugin propio y ACF estén activos, accede a:
 
-### [2026-03-09](https://underscoretw.com/release-notes/march-2026/)
-#### Added
-- Tailwind class ordering in PHP templates via ESLint
+```text
+Apariencia > Temas
+```
 
-#### Removed
-- `archiver`
+Activa el tema:
 
-### 2025-10-15
-#### Added
-- CSS-only Tailwind Typography
+```text
+theme
+```
 
-### 2025-09-17
-#### Added
-- `postcss-header`, to support the build process for `tailwind-intellisense.css`, which improves Tailwind CSS language server support
-
-#### Removed
-- `postcss-url`, now that the `transformAssetUrls` option has landed in `@tailwindcss/postcss`
-
-### 2025-06-06
-#### Added
-- `.npmrc` file to force the installation of `devDependencies`
-- `cssnano`
-
-#### Changed
-- `type` is now set to `module` in `package.json`
-- All `.mjs` files renamed to `.js`
-
-### [2025-05-15](https://underscoretw.com/release-notes/may-2025/)
-#### Added
-- `postcss-url`, PostCSS Advanced Variables, `postcss-import-ext-glob`
-
-#### Fixed
-- Minification (following migration from `@tailwindcss/cli` to `@tailwindcss/postcss`)
-- Rewritten asset paths in CSS files
-
-#### Changed
-- Overhaul and simplify `tailwind.css`
-- Move Prettier config to `prettier.config.mjs`
-- Limit block editor heading levels to `h2`–`h4`
-- Update theme file header
-
-### 2025-03-11
-#### Added
-- PostCSS, PostCSS CLI and PostCSS Nesting
-
-#### Removed
-- Tailwind CLI
-
-### [2025-01-23](https://underscoretw.com/release-notes/january-2025/)
-#### Added
-- New `theme.json` integration using Tailwind 4’s CSS configuration
-
-#### Changed
-- Update to Tailwind 4
-- Update to ESLint 9
-
-#### Removed
-- PostCSS
-- Glob-based imports via `postcss-import-ext-glob`
-- `theme.json` parsing via `@_tw/themejson`
-- `theme.json` triggering Tailwind rebuilds via `chokidar-cli` and `touch`
-- Tailwind class name ordering in PHP files via `eslint-plugin-tailwindcss`, `@angular-eslint/template-parser` and `eslint-plugin-php-markup`
-- Tailwind first-party plugins (`@tailwindcss/aspect-ratio`, `@tailwindcss/container-queries` and `@tailwindcss/forms`)
-
-### [2024-04-05](https://underscoretw.com/release-notes/april-2024/)
-#### Changed
-- Begin importing the contents of `./javascript/tailwind-typography-classes.js` from `@_tw/typography` to `./javascript/block-editor.js`
-- Update ESLint configuration to allowlist classes beginning with `wp-block` and `wp-element` 
-
-#### Removed
-- `./javascript/tailwind-typography-classes.js`
-
-### [2023-12-22](https://underscoretw.com/release-notes/december-2023/)
-#### Changed
-- Update to Tailwind 3.4
-
-### [2023-12-08](https://underscoretw.com/release-notes/december-2023/)
-#### Added
-- Support for block editor–only styles via `./tailwind/tailwind-editor-extra.css`
-- `@_tw/typography` to improve Tailwind Typography support in the block editor via a custom fork
-- Custom color theme and font weight overrides in `./tailwind/tailwind-typography.config.js`
-- A block style for Tailwind Typography’s `.lead` style
-
-#### Changed
-- Refactored `./javascript/tailwind-typography-classes.js`, adding new helper classes
-
-#### Removed
-- Tailwind Typography tweaks from `./tailwind/tailwind-typography.config.js`
-- `@tailwindcss/typography` (replacing it with the above-mentioned fork)
-
-### 2023-11-16
-#### Fixed
-- Ensure changes to `theme.json` update `tailwind.config.js` during `watch` process ([#79](https://github.com/gregsullivan/_tw/issues/79))
-- Support Yarn ([#77](https://github.com/gregsullivan/_tw/issues/77))
-
-### 2023-08-15
-#### Fixed
-- Support for block editor styles in WordPress 6.3 ([#60](https://github.com/gregsullivan/_tw/issues/60))
-
-### [2023-04-13](https://underscoretw.com/release-notes/april-2023/)
-#### Added
-- Automatic versioning in the zip file generated by `npm run bundle`
-- More detailed documentation in `README.md`
-
-#### Changed
-- Update to Tailwind 3.3
-- Revisit approach to Tailwind Typography
-- Improve comments throughout
-
-#### Removed
-- `@tailwindcss/line-clamp` and `postcss-simple-vars`
-
-### [2023-01-11](https://underscoretw.com/release-notes/april-2023/#h-january-s-linting-changes)
-#### Added
-- `@wordpress/prettier-config` and `eslint-config-prettier`
-
-#### Changed
-- Use Prettier to format JavaScript files
-- Install ESLint directly and use the `eslint:recommended` configuration
-- Set `ecmaVersion` to `latest` throughout
-
-#### Removed
-- `@wordpress/eslint-plugin`
-
-### [2022-10-22](https://underscoretw.com/release-notes/october-2022/)
-#### Changed
-- Update to Tailwind 3.2
-- Revisit approach to Tailwind Typography
-
-#### Added
-- Tailwind Typography support for comments
-- `@tailwindcss/container-queries`
-
-### [2022-09-08](https://underscoretw.com/release-notes/september-2022/)
-#### Changed
-- Finish restructuring theme files with improvements from [Varia](https://github.com/Automattic/themes/tree/master/varia)
-- Update Tailwind Typography selector
-- Clean up `package.json` scripts
-
-#### Added
-- `composer.lock` and `package-lock.json` files
-
-#### Removed
-- Default theme support for core custom background and custom logo functionality
-- Default setting for `content_width`
-
-### [2022-06-14](https://underscoretw.com/release-notes/june-2022/)
-#### Changed
-- Update to Tailwind 3.1
-
-#### Removed
-- The postcss-import module, as its functionality is included with Tailwind 3.1
-
-### [2022-05-24](https://underscoretw.com/release-notes/may-2022/)
-#### Added
-- Include a `style.css` file containing only the WordPress file header
-- Add quickstart instructions to `README.md`
-
-#### Changed
-- Update documentation to focus on installation without symlinking
-- Update file header
-
-### 2022-04-29
-#### Added
-- JavaScript build process using [esbuild](https://esbuild.github.io/)
-- Tailwind plugin for Prettier (for use in CSS files)
-- Tailwind plugin for eslint (for use in PHP files)
-- A `components` folder, automatically including CSS files within
-- Support for nested declarations by default
-- Tailwind Typography support for TinyMCE and the classic editor
-
-#### Changed
-- Restructure theme files with improvements from [Varia](https://github.com/Automattic/themes/tree/master/varia)
-- Base `phpcs.xml.dist` upon [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards) sample file
-- Improve Tailwind Typography block editor support
-
-#### Removed
-- Customizer and Custom Header support
-
-### 2022-01-11
-#### Added
-- Schema to `theme.json` file
-- `postcss-simple-vars` to change CSS selectors based on build target
-
-#### Changed
-- Update `tailwind.config.js` for Tailwind 3
-- Move Tailwind Typography modifier classes into `tailwind/custom/components.css`
-- Simplify Tailwind Typography configuration file
-- Switch from @_tw/typography to @tailwindcss/typography
-- Improve comments throughout
-
-#### Removed
-- Alpine.js
-- Stylelint
-- Separate configuration files for front-end and editor builds
-
-### 2021-10-11
-#### Changed
-- Use `.prose` as our Typography selector
-
-### 2021-09-09
-#### Added
-- Support for Tailwind Typography in the block editor
-- Support for `theme.json` in Tailwind
-- Styles for the block editor's content, wide and full widths
-- A basic `theme.json` file
-- Classes for `entry-title` and `entry-content`
-
-#### Changed
-- There are now multiple .eslintrc files to handle the differences between node and browser linting
-
-### 2021-07-02
-#### Changed
-- Build process migrated from Laravel Mix to Tailwind's own CLI via `npm-run-all`
-
-### 2021-05-03
-#### Added
-- Repository made public with initial functionality
+## 4. Instalar las dependencias de Node.js
+
+Abre una terminal en la carpeta raíz del tema:
+
+```bash
+cd wp-content/themes
+```
+
+Instala las dependencias:
+
+```bash
+npm install
+```
+
+La carpeta `node_modules` no se incluye en el repositorio y está excluida mediante `.gitignore`.
+
+## 5. Compilar los estilos y scripts
+
+### Desarrollo
+
+```bash
+npm run dev
+```
+
+### Compilación automática
+
+```bash
+npm run watch
+```
+
+Este comando permanece activo y vuelve a compilar los recursos cuando detecta cambios. Para detenerlo, utiliza `Ctrl + C`.
+
+# Importación del contenido de demostración
+
+Los archivos de demostración se encuentran en:
+
+```text
+theme/demo-content/
+```
+
+| Archivo | Descripción |
+| --- | --- |
+| `acf-export-2026-07-19.json` | Exportación de los grupos de campos de ACF |
+| `wordpress_tw.WordPress.2026-07-19 (1).xml` | Exportación del contenido de WordPress y de los productos de prueba |
+
+## 6. Importar el contenido de WordPress
+
+Accede a:
+
+```text
+Herramientas > Importar > WordPress
+```
+
+Si el importador de WordPress no está instalado, WordPress permitirá instalarlo desde esa misma pantalla.
+
+Selecciona el archivo:
+
+```text
+demo-content/wordpress_tw.WordPress.2026-07-19 (1).xml
+```
+
+Durante la importación:
+
+1. Asigna el contenido a un usuario existente o crea un usuario nuevo.
+2. Marca la opción **Descargar e importar archivos adjuntos**.
+3. Ejecuta la importación.
+4. Comprueba que se han importado las páginas y los productos.
+
+> [!WARNING]
+> El plugin propio debe estar activo antes de importar el XML. De lo contrario, WordPress podría no reconocer correctamente el Custom Post Type `Productos`.
+
+## 7. Importar los campos de ACF
+
+Accede en WordPress a:
+
+```text
+ACF > Herramientas
+```
+
+Importa el siguiente archivo:
+
+```text
+demo-content/acf-export-2026-07-19.json
+```
+
+Después de importarlo, comprueba que el grupo de campos está activo y correctamente asignado a la página `Home`.
+
+# Configuración de la página de inicio
+
+## 8. Establecer `Home` como portada
+
+Después de importar el contenido, accede a:
+
+```text
+Ajustes > Lectura
+```
+
+Configura las opciones de la siguiente manera:
+
+```text
+Tu portada muestra: Una página estática
+Portada: Home
+```
+
+Guarda los cambios.
+
+La página `Home` debe estar seleccionada como portada para mostrar correctamente la maquetación desarrollada.
+
+## 9. Configurar el menú
+
+Accede a:
+
+```text
+Apariencia > Menús
+```
+
+Selecciona el menú importado o crea uno nuevo y asígnalo a la ubicación registrada por el tema.
+
+## 10. Regenerar los enlaces permanentes
+
+Accede a:
+
+```text
+Ajustes > Enlaces permanentes
+```
+
+Pulsa **Guardar cambios** sin modificar ninguna opción. Esto regenerará las reglas de WordPress para las páginas y los productos.
+
+# Orden resumido de instalación
+
+1. Clonar el repositorio dentro de `wp-content/themes/`.
+2. Copiar los plugins de `plugins-propios/` a `wp-content/plugins/`.
+3. Activar el plugin propio.
+4. Instalar y activar ACF o ACF Pro.
+5. Activar el tema `theme`.
+6. Ejecutar `npm install`.
+7. Ejecutar `npm run build`, `npm run dev` o `npm run watch`.
+8. Importar `acf-export-2026-07-19.json`.
+9. Importar `wordpress_tw.WordPress.2026-07-19 (1).xml`.
+10. Seleccionar `Home` como página de inicio.
+11. Asignar el menú de navegación.
+12. Guardar los enlaces permanentes.
+
+# Custom Post Type Productos
+
+El proyecto utiliza un Custom Post Type llamado `Productos`, registrado mediante el plugin propio incluido en `plugins-propios/`.
+
+Cada producto admite:
+
+- Título.
+- Descripción.
+- Imagen destacada.
+- Enlace individual.
+
+La página de inicio muestra los últimos seis productos mediante una consulta personalizada.
+
+La tarjeta reutilizable se encuentra en:
+
+```text
+template-parts/product/card.php
+```
+
+# Contenido administrable con ACF
+
+El slider principal se gestiona desde la página `Home` mediante campos personalizados de ACF.
+
+Los campos permiten administrar:
+
+- Pretítulo.
+- Título.
+- Texto del botón.
+- URL del botón.
+- Imagen del slide.
+
+Para editar el slider:
+
+1. Accede a `Páginas`.
+2. Edita la página `Home`.
+3. Modifica el grupo de campos del slider.
+4. Actualiza la página.
+
+# Archivos generados
+
+Los comandos de npm generan los archivos CSS y JavaScript utilizados por el tema, entre ellos:
+
+```text
+theme/style.css
+theme/style-editor.css
+theme/js/script.min.js
+theme/js/block-editor.min.js
+```
+
+Estos archivos no deben editarse directamente, ya que se sobrescriben al ejecutar nuevamente los comandos de compilación.
+
+# Archivos excluidos
+
+La carpeta `node_modules` está excluida del repositorio mediante `.gitignore`.
+
+Ejemplo:
+
+```gitignore
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+*.log
+```
+
+# Comprobación final
+
+- [ ] El plugin propio está instalado y activo.
+- [ ] ACF o ACF Pro está instalado y activo.
+- [ ] El tema `theme` está activo.
+- [ ] Se ha ejecutado `npm install`.
+- [ ] Los estilos y scripts se han compilado.
+- [ ] El archivo JSON de ACF se ha importado.
+- [ ] El archivo XML de WordPress se ha importado.
+- [ ] Los productos aparecen en el panel de WordPress.
+- [ ] La página `Home` está seleccionada como portada.
+- [ ] El menú está asignado a su ubicación.
+- [ ] Los enlaces permanentes se han regenerado.
+- [ ] El diseño funciona correctamente en escritorio y móvil.
+
+# Evidencia visual
+
+El vídeo demostrativo debe tener una duración máxima de **3 minutos** e incluir:
+
+- Navegación por la página desarrollada.
+- Funcionamiento de los sliders.
+- Visualización de los productos.
+- Prueba responsive mediante el inspector del navegador.
+- Vista móvil del diseño y del menú.
+- Vistazo rápido a la estructura de carpetas.
+- Carpetas `plugins-propios/` y `demo-content/`.
+
+**Enlace al vídeo:** [Añadir enlace](#)
+
+# Tecnologías utilizadas
+
+- WordPress.
+- PHP.
+- Tailwind CSS.
+- JavaScript.
+- SwiperJS.
+- Advanced Custom Fields.
+- Node.js.
+- npm.
+- PostCSS.
+- esbuild.
+- Git y GitHub.
+
+# Autor
+
+Desarrollado por **Rodrigo** para la prueba técnica de WordPress de **VGS**.
