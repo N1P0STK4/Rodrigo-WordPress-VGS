@@ -2,9 +2,9 @@
 
 Tema personalizado de WordPress desarrollado para la prueba técnica de **VGS** a partir del starter theme **_tw**, utilizando **Tailwind CSS**, **JavaScript**, **SwiperJS** y **Advanced Custom Fields**.
 
-## Vídeo de demostracion
+## Vídeo de demostración
 
-- **Vídeo demostrativo:** [enlace del video](https://youtu.be/zOBFlqhhI1g) (#)
+- **Vídeo demostrativo:** [enlace del video](https://youtu.be/zOBFlqhhI1g)
 
 ## Funcionalidades principales
 
