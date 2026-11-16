@@ -312,18 +312,6 @@ Thumbs.db
 - [ ] Los enlaces permanentes se han regenerado.
 - [ ] El diseño funciona correctamente en escritorio y móvil.
 
-# Evidencia visual
-
-El vídeo demostrativo debe tener una duración máxima de **3 minutos** e incluir:
-
-- Navegación por la página desarrollada.
-- Funcionamiento de los sliders.
-- Visualización de los productos.
-- Prueba responsive mediante el inspector del navegador.
-- Vista móvil del diseño y del menú.
-- Vistazo rápido a la estructura de carpetas.
-- Carpetas `plugins-propios/` y `demo-content/`.
-
 **Enlace al vídeo:** [Añadir enlace](#)
 
 # Tecnologías utilizadas
