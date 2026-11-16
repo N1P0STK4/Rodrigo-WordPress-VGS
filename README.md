@@ -312,8 +312,6 @@ Thumbs.db
 - [ ] Los enlaces permanentes se han regenerado.
 - [ ] El diseño funciona correctamente en escritorio y móvil.
 
-**Enlace al vídeo:** [Añadir enlace](#)
-
 # Tecnologías utilizadas
 
 - WordPress.
